@@ -6,6 +6,8 @@ const riftSoftFont = localFont({
   variable: "--font-rift-soft",
 });
 
+export const revalidate = 600; // revalidate the data at most every 10 minutes
+
 export const metadata = {
   title: "Agenda nerdearla",
 };
