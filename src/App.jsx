@@ -16,7 +16,6 @@ import { HeaderBanner } from "./components/HeaderBanner";
 import { NavBar } from "./components/NavBar";
 import { TalkCard } from "./components/TalkCard";
 import { TRACK_COLORS } from "./constants";
-import "./fonts.css";
 
 const theme = extendTheme({
   colors: {
@@ -30,7 +29,7 @@ const theme = extendTheme({
   fonts: {
     style: {
       body: "Helvetica Neue, sans-serif",
-      heading: "Rift Soft, sans-serif",
+      heading: "var(--font-rift-soft)",
     },
   },
 });
