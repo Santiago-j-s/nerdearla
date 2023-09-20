@@ -3,7 +3,6 @@ import {
   Card,
   Divider,
   Flex,
-  Image,
   Modal,
   ModalBody,
   ModalCloseButton,
@@ -13,6 +12,7 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
+import Image from "next/image";
 
 export const TalkCard = ({
   beginsAt,
@@ -32,7 +32,13 @@ export const TalkCard = ({
         transition: "all .2s",
       }}
     >
-      <Image src={bannerUrl} onClick={onOpen} alt={title} />
+      <Image
+        width={640}
+        height={360}
+        src={bannerUrl}
+        onClick={onOpen}
+        alt={title}
+      />
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
@@ -40,7 +46,13 @@ export const TalkCard = ({
           <ModalHeader></ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Image src={bannerUrl} onClick={onOpen} alt={title} />
+            <Image
+              width={640}
+              height={360}
+              src={bannerUrl}
+              onClick={onOpen}
+              alt={title}
+            />
             <Flex
               flexDirection={{ sm: "column", md: "row" }}
               justifyContent={"space-evenly"}
