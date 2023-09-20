@@ -1,3 +1,4 @@
+import { InfoOutlineIcon, TimeIcon } from "@chakra-ui/icons";
 import {
   Card,
   Divider,
@@ -12,7 +13,6 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
-import { InfoOutlineIcon, TimeIcon } from "@chakra-ui/icons";
 
 export const TalkCard = ({
   beginsAt,
@@ -32,15 +32,15 @@ export const TalkCard = ({
         transition: "all .2s",
       }}
     >
-      <Image src={bannerUrl} onClick={onOpen} />
+      <Image src={bannerUrl} onClick={onOpen} alt={title} />
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent minW={{ sm: "0px", md: "680px" }}>
-          <ModalHeader>{title}</ModalHeader>
+          <ModalHeader></ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Image src={bannerUrl} onClick={onOpen} />
+            <Image src={bannerUrl} onClick={onOpen} alt={title} />
             <Flex
               flexDirection={{ sm: "column", md: "row" }}
               justifyContent={"space-evenly"}

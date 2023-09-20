@@ -89,7 +89,7 @@ const App = ({ talks }) => {
                           key={talk.id}
                           beginsAt={talk.beginsAt}
                           endsAt={talk.endsAt}
-                          title={talk.title}
+                          title={talk.withEvent.title}
                           bannerUrl={talk.bannerUrl}
                           htmlDescription={talk.htmlDescription}
                           type={talk.type}
