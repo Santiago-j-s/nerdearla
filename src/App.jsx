@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Box,
   Center,
@@ -12,12 +14,12 @@ import {
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { GetTicketsButton } from "./components/FreeTicketsButton";
 import { HeaderBanner } from "./components/HeaderBanner";
 import { NavBar } from "./components/NavBar";
 import { TalkCard } from "./components/TalkCard";
 import { TRACK_COLORS } from "./constants";
-import { GetTicketsButton } from "./components/FreeTicketsButton";
-import './fonts.css';
+import "./fonts.css";
 
 const getTalks = async () =>
   axios.post("https://api.swapcard.com/graphql", {
@@ -39,22 +41,22 @@ const getTalks = async () =>
     },
   });
 
-  const theme = extendTheme({
-    colors: {
-      brand: {
-        nerdRed: '#ff323c',
-        nerdGreen: '#00aca8',
-        nerdYellow: '#ffba00',
-        nerdOrange: '#f98232',
-      },
+const theme = extendTheme({
+  colors: {
+    brand: {
+      nerdRed: "#ff323c",
+      nerdGreen: "#00aca8",
+      nerdYellow: "#ffba00",
+      nerdOrange: "#f98232",
     },
-    fonts: {
-      style: {
-        body: "Helvetica Neue, sans-serif",
-        heading: "Rift Soft, sans-serif",
-      },
+  },
+  fonts: {
+    style: {
+      body: "Helvetica Neue, sans-serif",
+      heading: "Rift Soft, sans-serif",
     },
-  });
+  },
+});
 
 const mapTalks = (talks) =>
   talks.data.view.plannings.nodes.map((t) => ({
@@ -130,7 +132,11 @@ const App = () => {
                     marginX={1}
                   >
                     <Box bg={TRACK_COLORS[type]} textAlign="center">
-                      <Text color="white" fontWeight="medium" fontFamily="style.heading">
+                      <Text
+                        color="white"
+                        fontWeight="medium"
+                        fontFamily="style.heading"
+                      >
                         {type}
                       </Text>
                     </Box>
